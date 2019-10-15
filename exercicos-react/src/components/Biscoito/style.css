@@ -1,0 +1,27 @@
+.container{
+    max-width: 1000px;
+    background: brown;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;  
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content:  center; */
+    align-items: center;
+}
+
+.title-biscoito{
+    padding: 10px;
+    margin: 0;
+    text-transform: uppercase;
+    color: cornsilk;
+}
+
+.frase{
+    color: antiquewhite;
+}
+
+.btn{
+    padding: 10px;
+}

@@ -1,0 +1,48 @@
+.container-cronometro{
+    background: #4c89e3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ok{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.box-cronometro{
+    background: url(../../assets/img/cronometro.png) no-repeat center;
+    width: 522px;
+    height: 597px;
+    background-size: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer{
+    font-size: 130px;
+    margin-top: 100px;
+}
+
+.box-botoes{
+    padding-top: 20px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+}
+
+.box-botoes button{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.start{
+    background: #4c89e3;
+}
+
+.stop{
+    color: brown;
+}
