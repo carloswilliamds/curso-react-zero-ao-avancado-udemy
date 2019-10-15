@@ -2,7 +2,7 @@
 Exercícios e projetos feitos durante o curso
 
 # exercicos-react
-npm install e npm start
+npm install e npm start<br/>
 praticando os conceitos do reactjs
 
 # firebase
