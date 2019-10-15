@@ -1,10 +1,9 @@
 # exercicios-curso-react-fraga
-Exercícios e projetos feitos durante o curso
+Exercícios e projetos feitos durante o curso<br/>
+Rodar npm install e npm start dentro de cada pasta de exercícios/projeto.
 
 # exercicos-react
-npm install e npm start<br/>
 praticando os conceitos do reactjs
 
 # firebase
-npm install e npm start
 testes com o banco de dados firebase
