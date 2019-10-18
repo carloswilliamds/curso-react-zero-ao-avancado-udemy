@@ -13,3 +13,19 @@
 .App-link {
   color: #09d3ac;
 }
+
+.form-cadastrar, .form-login{
+  border: 1px solid #FFF;
+  padding: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+input{
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
