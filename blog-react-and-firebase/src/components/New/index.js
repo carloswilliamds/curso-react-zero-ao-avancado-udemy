@@ -10,9 +10,10 @@ class New extends Component{
         this.state = {
             title: "",
             description: "",
-            image: ""
+            image: "",
+            messageError: ""
 
-        }
+        } 
 
         this.cadastrarPost = this.cadastrarPost.bind(this);
 
@@ -25,8 +26,25 @@ componentDidMount(){
 }
 
 
-cadastrarPost(e){
+cadastrarPost = async(e) =>{
     e.preventDefault()
+
+    if(this.state.title !== "" && this.state.image !== "" && this.state.description !== ""  ){
+        let post = firebase.firebaseApp.ref("post");
+        let chave = post.push().key;
+        await post.child(chave).set({
+            titulo: this.state.title,
+            imagem: this.state.image,
+            descricao: this.state.description,
+            autor: localStorage.nome
+        })
+
+        this.props.history.push("/dashboard")
+    } else{
+        this.setState({
+           messageError: "Atenção: Preencha todos os campos."
+        })
+    }
 }
     
 
@@ -39,16 +57,16 @@ cadastrarPost(e){
                     </div>
                     <div className="form-container">
                     <h1>Novo Post</h1>
-                    <p className="message-error"></p>
+                    <p className="message-error">{this.state.messageError}</p>
                     <form onSubmit={this.cadastrarPost}>
                         <label>Título</label>
-                        <input type="text" placeholder="Digite seu E-mail" required value={this.state.title} onChange={(e) =>{ this.setState({title: e.target.value})}} />
+                        <input type="text" placeholder="Digite o título" required value={this.state.title} onChange={(e) =>{ this.setState({title: e.target.value})}} />
                         
                         <label>Descrição</label>
-                        <textarea type="text" placeholder="Digite sua Senha" required value={this.state.description} onChange={(e) =>{ this.setState({description: e.target.value})}}></textarea>
+                        <textarea type="text" placeholder="Descrição" required value={this.state.description} onChange={(e) =>{ this.setState({description: e.target.value})}}></textarea>
                         
                         <label>Imagem</label>
-                        <input type="password" placeholder="Digite a url da imagem" required value={this.state.image} onChange={(e) =>{ this.setState({image: e.target.value})}} />
+                        <input type="text" placeholder="Cole a url da imagem"  value={this.state.image} onChange={(e) =>{ this.setState({image: e.target.value})}} />
                         
                         <button type="submit" className="btn-form">Cadastrar</button>
                     </form>

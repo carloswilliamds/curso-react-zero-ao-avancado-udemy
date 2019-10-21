@@ -21,3 +21,11 @@
    color: #FFF;
 
 }
+.form-container textarea{
+    height: 80px;
+    max-width: 100%;
+    padding: 10px; 
+    margin-bottom: 10px;
+}
+
+

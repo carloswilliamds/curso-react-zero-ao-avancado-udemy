@@ -7,26 +7,36 @@ class Dashboard extends Component{
     constructor(props){
       super(props);
       this.state = {
-        nome: "Carregando..."
+        nome: localStorage.nome
       };
     
       this.sair = this.sair.bind(this);
     }
 
 async componentDidMount(){
+
   if(!firebase.getCurrent()){
     this.props.history.replace("/login")
     return null;
+  
   }
 
+
   firebase.getUserName((infos) =>{
-    this.setState({nome: infos.val().nome})
+    localStorage.nome = infos.val().nome;
+    this.setState({nome: localStorage.nome})
+
   })
-}
+
+
+  }
+
 
     sair = async () =>{
       firebase.signOut();
        this.props.history.push("/")
+
+       localStorage.nome = "Carregando...";
 
     }
 

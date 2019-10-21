@@ -10,6 +10,8 @@ class Home extends Component {
 
 
 
+
+
     componentDidMount(){
         firebase.firebaseApp.ref("post").once("value", (snapshot) =>{
            let state = this.state;
@@ -21,12 +23,12 @@ class Home extends Component {
                 state.lista.push({
                     key: post.key,
                     titulo: post.val().titulo,
-                    image: post.val().image,
+                    image: post.val().imagem,
                     descricao: post.val().descricao,
                     autor: post.val().autor
                 })
             })
-
+            state.lista = state.lista.reverse()
             this.setState(state)
     })
     }
