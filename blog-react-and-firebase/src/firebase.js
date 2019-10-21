@@ -1,6 +1,7 @@
 import firebaseApp from 'firebase/app';
 import "firebase/database";
 import "firebase/auth";
+import "firebase/storage"
 
 let firebaseConfig = {
     apiKey: "AIzaSyB8317QGp6RW5bBfavGAwSWWISfVx3DNrM",
@@ -18,6 +19,7 @@ class Firebase {
         firebaseApp.initializeApp(firebaseConfig);
         this.firebaseApp = firebaseApp.database();
         this.auth = firebaseApp.auth();
+        this.storage = firebaseApp.storage();
 
 
     }
@@ -53,6 +55,10 @@ class Firebase {
 
     getCurrent(){
         console.log(firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.email)
+        return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.uid
+    }
+
+    getUserUid(){
         return firebaseApp.auth().currentUser && firebaseApp.auth().currentUser.uid
     }
 

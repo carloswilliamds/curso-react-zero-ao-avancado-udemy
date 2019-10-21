@@ -9,9 +9,6 @@ class Home extends Component {
     }
 
 
-
-
-
     componentDidMount(){
         firebase.firebaseApp.ref("post").once("value", (snapshot) =>{
            let state = this.state;

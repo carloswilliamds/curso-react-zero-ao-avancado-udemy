@@ -29,3 +29,12 @@
 }
 
 
+
+.form-container progress{
+    cursor: progress;
+    width: 100%;   
+}
+
+.box-preview img{
+    width: 100%;
+}

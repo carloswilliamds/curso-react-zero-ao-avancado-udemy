@@ -10,12 +10,70 @@ class New extends Component{
         this.state = {
             title: "",
             description: "",
-            image: "",
-            messageError: ""
+            image: null,
+            url: "",
+            messageError: "",
+            progress: 0
 
         } 
 
         this.cadastrarPost = this.cadastrarPost.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
+
+
+    }
+
+    handleFile = async(e) =>{
+
+        if(e.target.files[0]){
+            const image = e.target.files[0];
+            if(image.type === "image/png" || image.type === "image/jpeg"){
+
+               await this.setState({
+                    image: image
+                })
+
+                this.handleUpload()
+
+                if(this.messageError !== ""){
+                    this.setState({
+                        messageError: ""
+                    })
+                }
+
+            } else{
+                this.setState({
+                    messageError: "Selecione um JPG ou PNG",
+                    image: null
+                })
+            }
+        }
+    }
+
+    handleUpload = async() =>{
+
+        const {image} = this.state
+        const getUserUid = firebase.getUserUid();
+        const uploadTask = firebase.storage
+        .ref(`images/${getUserUid}/${image.name}`)
+        .put(image)
+
+        await uploadTask.on("state_changed", (snapshot) =>{
+
+            const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+            this.setState({
+                progress: progress
+            })
+
+        },(error) => {
+            alert(error)
+        },() =>{
+            firebase.storage.ref(`images/${getUserUid}`).child(image.name).getDownloadURL().then( (url) =>{
+                this.setState({url: url})
+                console.log(url);
+            })
+        })
 
     }
 
@@ -29,12 +87,15 @@ componentDidMount(){
 cadastrarPost = async(e) =>{
     e.preventDefault()
 
-    if(this.state.title !== "" && this.state.image !== "" && this.state.description !== ""  ){
+    if(this.state.title !== "" 
+    && this.state.image !== null 
+    && this.state.url !== ""
+    && this.state.description !== ""   ){
         let post = firebase.firebaseApp.ref("post");
         let chave = post.push().key;
         await post.child(chave).set({
             titulo: this.state.title,
-            imagem: this.state.image,
+            imagem: this.state.url,
             descricao: this.state.description,
             autor: localStorage.nome
         })
@@ -65,8 +126,18 @@ cadastrarPost = async(e) =>{
                         <label>Descrição</label>
                         <textarea type="text" placeholder="Descrição" required value={this.state.description} onChange={(e) =>{ this.setState({description: e.target.value})}}></textarea>
                         
-                        <label>Imagem</label>
-                        <input type="text" placeholder="Cole a url da imagem"  value={this.state.image} onChange={(e) =>{ this.setState({image: e.target.value})}} />
+                        <label>Selecione a image:</label>
+                        <input type="file"  onChange={this.handleFile} />
+
+                        <div className="box-preview">
+                            {this.state.progress !== 100 &&  this.state.progress !== 0 && 
+                            <progress max="100" value={this.state.progress} />
+                            }
+                            <br />
+                            {this.state.url !== "" &&
+                            <img src={this.state.url} alt="preview image" width="200px" height="150px" />
+                            }
+                        </div>
                         
                         <button type="submit" className="btn-form">Cadastrar</button>
                     </form>
