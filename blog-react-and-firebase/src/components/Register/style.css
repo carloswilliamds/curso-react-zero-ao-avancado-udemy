@@ -1,0 +1,60 @@
+.page-register .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-container{
+    max-width: 500px;
+    width: 100%;
+    padding: 0 5px;
+}
+
+
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input{
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.form-container label{
+    padding-bottom: 5px;
+}
+
+.btn-form{
+    width: 100%;
+    background: #000;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    margin:  10px 0;
+    cursor: pointer;
+}
+
+.btn-form:hover{
+    background: #333;
+}
+
+
+.message-error{
+    height: 30px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #333;
+    font-size: 12px;
+}
+
+.text-footer{
+    margin-top: 10px;
+}

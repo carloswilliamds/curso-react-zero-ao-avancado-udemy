@@ -1,0 +1,33 @@
+.dashboard{
+    margin-top: 30px;
+}
+
+.btn-sair{
+    background: #000;
+    color: #FFF;
+
+}
+
+.new-post{
+    background: rgb(0, 68, 253);
+    color: #FFF;
+    border: none;
+
+}
+
+.btn-action{
+    margin-top: 10px;
+}
+
+.btn-action a, .btn-action button{
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.box-user{
+    margin-top: 20px;
+}

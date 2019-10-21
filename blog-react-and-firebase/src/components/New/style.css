@@ -1,0 +1,23 @@
+.page-new-post{
+    margin-top: 30px;
+}
+
+.btn-action{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-action a, .btn-action button{
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.page-new-post a{
+   background: #000;
+   color: #FFF;
+
+}
