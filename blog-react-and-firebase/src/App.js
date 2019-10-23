@@ -8,8 +8,6 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import New from './components/New';
-
-
 import firebase from './firebase'
 
 class App extends Component{
@@ -21,6 +19,7 @@ class App extends Component{
   }
 
   componentDidMount(){
+
     firebase.isInitialized().then(res =>{
       console.log(res, "res")
 
