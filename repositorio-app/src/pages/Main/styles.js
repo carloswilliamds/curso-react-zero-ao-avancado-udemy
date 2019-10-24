@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 
 export const Container  = styled.div`
 
@@ -58,8 +58,19 @@ export const Form  = styled.form`
 
 ` 
 
+// Criando animação
 
-export const SubmitButton  = styled.button.attrs({type: 'submit'})`
+const animateButton = keyframes`
+    from {
+        transform:  rotate(0deg);
+    }
+
+    to{
+        transform:  rotate(360deg);
+    }
+`
+
+export const SubmitButton  = styled.button.attrs(props =>({type: 'submit', disabled: props.loading}))`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,5 +83,71 @@ export const SubmitButton  = styled.button.attrs({type: 'submit'})`
         color: #FFF;
     }
 
+    &[disabled]{
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    ${props => props.loading &&
+        css`
+        svg{
+            animation: ${animateButton} 2s linear infinite;
+        }
+        `
+    }
+
 
 ` 
+
+export const List = styled.ul`
+
+    list-style: none;
+    border: none;
+
+    li{
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & + li{
+            border-top: 1px solid #333;
+        }
+
+        div{
+            display: flex;
+        }
+    
+        .name-repo{
+            margin-left: 10px;
+            font-size: 18px;
+
+        }
+
+        svg{
+        font-size: 20px;
+    }
+        
+    }
+
+
+`
+
+export const TitleRepo = styled.h2`
+
+    padding: 20px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #DDD;
+
+`
+
+export const DeleteButton = styled.button`
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+
+`
