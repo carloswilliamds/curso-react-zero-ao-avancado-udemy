@@ -108,7 +108,7 @@ export default function Main(){
 
             <TitleRepo>{title}</TitleRepo>
 
-                {JSON.parse(localStorage.getItem("repositorios")).length > 0 || repositorios.length > 0 &&
+                {JSON.parse(localStorage.getItem("repositorios")) || repositorios.length > 0 &&
                 <List>
                     {repositorios.map(repo => (
    
