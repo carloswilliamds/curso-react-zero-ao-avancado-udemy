@@ -3,12 +3,15 @@ Exercícios e projetos realizados durante o curso<br/>
 npm install e npm start dentro de cada pasta de exercícios/projeto.
 
 # exercicos-react
-Praticando os conceitos do reactjs
+Praticando os conceitos do reactjs.
 
 # firebase
-Testes com o banco de dados firebase
-
+Testes com o banco de dados firebase.
 
 # blog-react-and-firebase
 
-projeto usando react e firebase 
+Projeto utilizando Recat e firebase.
+
+# repositorio-app
+
+Projeto utilizando React Hooks e Styled Components.
