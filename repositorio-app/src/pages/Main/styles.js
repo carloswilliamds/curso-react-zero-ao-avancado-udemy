@@ -26,6 +26,17 @@ background-color: #FFF;
     min-height: 10px;
     /* outline: 1px solid orange; */
 
+    .btn-voltar{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        color: #000;
+        text-decoration:none;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
     .title{
         display: flex;
         justify-content: center;
@@ -49,6 +60,14 @@ export const Form  = styled.form`
     input{
         width: 100%;
         padding: 15px 20px;
+        outline: none;
+        border-color: ${props => (
+            
+            props.error == "vazio" && "red" ||
+            props.error == "atencao" && "orange" ||
+            props.error == null && "#333"
+            
+            )}
         font-size: 17px;
         display: flex;
         align-items: center;
@@ -124,9 +143,13 @@ export const List = styled.ul`
 
         }
 
+        a{
+            color: #000;
+        }
+
         svg{
-        font-size: 20px;
-    }
+            font-size: 20px;
+        }
         
     }
 
@@ -140,6 +163,17 @@ export const TitleRepo = styled.h2`
     justify-content: center;
     align-items: center;
     color: #DDD;
+
+    svg{
+        margin-right: 5px;
+        color: ${props => (
+            props.color == "vazio" && "red" ||
+            props.color == "atencao" && "orange" ||
+            props.color == "adicionado" && "green" ||
+            props.color == null && "#333"
+            
+            )}
+    }
 
 `
 
