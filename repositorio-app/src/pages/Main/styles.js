@@ -16,7 +16,6 @@ export const Container  = styled.div`
 
 ` 
 
-
 export const ContentMain  = styled.div`
 
 background-color: #FFF;
