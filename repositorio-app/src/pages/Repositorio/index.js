@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import {Container, ContentMain, Form, SubmitButton, List, TitleRepo, DeleteButton} from '../../pages/Main/styles.js';
+import {Container, ContentMain, Form, SubmitButton, List, TitleRepo, DeleteButton, Owner, Loading} from '../../pages/Main/styles.js';
 import {Link} from "react-router-dom";
 import api from "../../services/api"
+import {FaSpinner} from "react-icons/fa"
 
 export default function Repositorio({match}){
     console.log(match.params.repositorio)
@@ -40,16 +41,42 @@ export default function Repositorio({match}){
 
         load()
    
-    },[match.params.repositorio]) // disparado quando receber um parametro
+    },[]) // disparado quando receber um parametro
     console.log(repositorio, issues, loading)
+
+
+
+
+    if(loading){
+        return(
+         <Loading>
+             <h1>Carregando</h1>
+             <FaSpinner></FaSpinner>
+         </Loading>
+        )
+     } 
 
     return(
         <Container>
-            <ContentMain>
+            <ContentMain page="repositorio">
             <Link to="/" className="btn-voltar">Voltar</Link>
                         <h1 className="title"><span>{decodeURIComponent(match.params.repositorio)}</span></h1>
             </ContentMain>
+
+            <Owner>
+                <img src={repositorio.owner.avatar_url} alt={repositorio.owner.login} />
+                <h1>{repositorio.name}</h1>
+                <p>{repositorio.description}</p>
+
+            </Owner>
+
         </Container>
-    )
+    )    
+    
+
+
+
 }
+
+    
 

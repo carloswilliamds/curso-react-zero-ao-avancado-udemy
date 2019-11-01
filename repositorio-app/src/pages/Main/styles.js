@@ -22,6 +22,7 @@ background-color: #FFF;
     max-width: 1000px;
     width: 100%;
     display: flex;
+
     min-height: 10px;
     /* outline: 1px solid orange; */
 
@@ -42,6 +43,15 @@ background-color: #FFF;
         align-items: center;
         width: 100%;
         padding: 20px;
+        font-size: ${props =>( props.page == "repositorio" ? "20px" : "30px")}
+    }
+
+    ${props => props.page == "repositorio" &&
+        css`
+        .title{
+            justify-content: flex-end;
+        }
+        `
     }
 
     .title svg{
@@ -66,7 +76,8 @@ export const Form  = styled.form`
             props.error == "atencao" && "orange" ||
             props.error == null && "#333"
             
-            )}
+            )};
+
         font-size: 17px;
         display: flex;
         align-items: center;
@@ -75,6 +86,7 @@ export const Form  = styled.form`
 
 
 ` 
+
 
 // Criando animação
 
@@ -182,5 +194,53 @@ export const DeleteButton = styled.button`
     border: none;
     cursor: pointer;
 
+
+`
+
+export const Owner = styled.header`
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        width: 150px;
+        border-radius: 10%;
+        margin:  20px 0;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    p{
+        margin-top: 5px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 1.3;
+        max-width: 400px;
+    }
+
+
+
+`
+
+export const Loading =  styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    height: 100vh;
+    color: #FFF;
+    
+    h1{
+        padding-bottom: 10px;
+    }
+
+        svg{
+
+            font-size:30px
+            animation: ${animateButton} 1.5s linear infinite;
+        }
 
 `
