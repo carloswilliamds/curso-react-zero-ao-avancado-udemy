@@ -16,7 +16,7 @@ export default function Main(){
     const messageErros = {
         "deleted": "Repositorio Deletado!",
         "allDeleted": "Todos Repositórios foram deletados!",
-        "vazio": "Preencha  com usuaraio/projeto",
+        "vazio": "Preencha  com usuário/projeto",
         "conflicted": "Esse repostório já foi adicionado.",
         "networkError": "Sem internet ;(",
         "notfoud": "Repositório não encontrado"
@@ -190,7 +190,7 @@ export default function Main(){
             <Form onSubmit={(e) =>{handleSubmit(e)}} error={alert}>
                 <input
                  type="text" 
-                 placeholder="Adicionar Repositorios"
+                 placeholder="usuário/projeto"
                  value={newRepo}
                  onChange={handleInputChange}
                  onBlur={handleInputBlur}

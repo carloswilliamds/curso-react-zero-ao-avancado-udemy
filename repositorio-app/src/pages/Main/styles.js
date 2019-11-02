@@ -221,8 +221,6 @@ export const Owner = styled.header`
         max-width: 400px;
     }
 
-
-
 `
 
 export const Loading =  styled.div`
@@ -239,8 +237,127 @@ export const Loading =  styled.div`
 
         svg{
 
-            font-size:30px
+            font-size:30px;
             animation: ${animateButton} 1.5s linear infinite;
         }
+
+`
+
+export const IssuesList = styled.ul`
+    list-style: none;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #EEE;
+
+    li{
+        display: flex;
+        padding:  15px 10px;
+
+        & + li{
+            margin-top: 15px;
+
+        }
+
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius:50%;
+            border: 2px solid #FF0033;
+
+        }
+
+        .infos-issue{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10px;
+            
+                div{
+                    line-height: 2.5;
+                    color: #FFF;
+                }
+
+                h3{
+                    padding-top: 13px;
+                    margin-bottom: 20px;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: #222;
+                    transform: 0.5; 
+                    font-size: 20px;
+
+                    &:hover{
+                        color: #0071db;
+                    }
+
+                }
+
+                span{
+                    background: #C12;
+                    padding: 5px;
+                    border-radius: 4px;
+                    margin-left: 5px;
+                    
+                }
+        }
+    
+   }
+`
+export const PagesActions  = styled.div`
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 30px; 
+
+    button{
+        outline:0;
+        border:0;
+        color: #FFF;
+        background: #222;
+        border-radius: 4px;
+        padding:  10px 15px;
+        cursor: pointer;
+    
+        &:hover{
+            text-shadow: 0 0 2px #FFF;
+        }
+
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.8;
+            text-shadow: initial;
+        }
+    }
+`
+
+export const FilterList = styled.div`
+    margin: 10px;
+    padding-top: 10px;
+
+    button + button{
+        margin-left: 10px;
+    }
+
+    button{
+        padding: 10px;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+
+        &:hover{
+        background: #0071db;
+        color: #FFF;
+        text-shadow: 0 0 2px #FFF;
+    }
+
+        &:nth-child(${props => props.active + 1}){
+            background: #0071db;
+            color: #FFF;
+        }
+    }
+
 
 `
