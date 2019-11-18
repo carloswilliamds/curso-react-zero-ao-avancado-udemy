@@ -5,7 +5,7 @@ Exercícios e projetos realizados durante o curso<br/>
 
 ## Índice
 
-- **[Exercícios com react](#Exercícios com react)**
+- **[Exercícios com react](#exerc%C3%ADcios-com-react)**
 - Firebase
 - Blog React e firebase
 
