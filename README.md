@@ -11,9 +11,9 @@ Exercícios e projetos realizados durante o curso<br/>
 
 ## Exercícios com react
 Praticando os conceitos do reactjs.
-![TESTE](assets-md/exercicios-min.gif)
-
 [Arquivos](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
+
+![TESTE](assets-md/exercicios-min.gif)
 
 ```javascript
 import React, {Component} from 'react';
