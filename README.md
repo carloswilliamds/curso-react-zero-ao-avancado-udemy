@@ -4,7 +4,7 @@ Exercícios e projetos realizados durante o curso<br/>
 
 ## Exercícios com react
 Praticando os conceitos do reactjs.
-...javascript
+```javascript
 import React, {Component} from 'react';
 
 
@@ -67,7 +67,7 @@ function App(){
 }
 
 export default App;
-...
+```
 
 ## firebase
 Testes com o banco de dados Firebase.
