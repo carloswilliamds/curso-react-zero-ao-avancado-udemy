@@ -5,7 +5,7 @@ Exercícios e projetos realizados durante o curso<br/>
 
 ## Índice
 
-- **Exercícios com react**: https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy#%C3%ADndice
+- **[Exercícios com react](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy#%C3%ADndice)**
 - Firebase
 - Blog React e firebase
 
