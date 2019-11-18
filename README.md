@@ -1,17 +1,79 @@
-# exercicios-curso-react-fraga
+# Curso React do Zero ao Avançado 
+https://www.udemy.com/course/curso-reactjs/
 Exercícios e projetos realizados durante o curso<br/>
-npm install e npm start dentro de cada pasta de exercícios/projeto.
 
-# exercicos-react
+## Exercícios com react
 Praticando os conceitos do reactjs.
+...
+import React, {Component} from 'react';
 
-# firebase
-Testes com o banco de dados firebase.
 
-# blog-react-and-firebase
+class Equipe extends Component{
+    render(){
+        return(
+            <div>
+                <Sobre userName={this.props.nome} userCargo={this.props.cargo} userIdade={this.props.idade} />
+                <Social youtube={this.props.youtube} />
+                <hr />
+            </div>
+        )
+    }
+}
 
-Projeto utilizando React e firebase.
 
-# repositorio-app
 
+const Sobre = (props) => {
+    return(
+        <div>
+            <h1>Instrutor: {props.userName}</h1>
+            <h2>Idade: {props.userIdade}</h2>
+            <h2>Cargo: {props.userCargo}</h2>
+        </div>
+    )
+}
+
+const Social = (props) => {
+
+    if(props.youtube){
+        return(
+            <div>
+                <a href={props.youtube}>Youtube</a><br/>
+                <a href={props.facebook} >Facebook</a><br/>
+                <a href={props.instagram} >Intagram</a><br/>
+            </div>
+        )
+    } else{ 
+
+        return(
+            <div>
+               Não tem Youtube
+            </div>
+        )
+    }
+
+}
+
+function App(){
+    return(
+ 
+        <div>
+            <h1>Day Game Brasil</h1>
+            <Equipe nome="Carlos" cargo="Front-End" idade="22 Anos" youtube="https://www.youtube.com/" />
+            <Equipe nome="Felipe" cargo="Analista" idade="28 Anos" />
+
+        </div>
+ 
+    );
+}
+
+export default App;
+...
+
+## firebase
+Testes com o banco de dados Firebase.
+
+## blog-react-and-firebase
+Projeto utilizando React e Firebase.
+
+## repositorio-app
 Projeto utilizando React Hooks e Styled Components.
