@@ -1,6 +1,13 @@
 # Curso React do Zero ao Avançado 
 https://www.udemy.com/course/curso-reactjs/ <br />
+
 Exercícios e projetos realizados durante o curso<br/>
+
+## Índice
+
+- Exercícios com react
+- Firebase
+- Blog React e firebase
 
 ## Exercícios com react
 Praticando os conceitos do reactjs.
@@ -71,7 +78,7 @@ function App(){
 export default App;
 ```
 
-## firebase
+## Firebase
 Testes com o banco de dados Firebase.
 
 ## blog-react-and-firebase
