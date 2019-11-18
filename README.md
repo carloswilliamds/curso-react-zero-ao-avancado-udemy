@@ -10,7 +10,7 @@ Testes com o banco de dados firebase.
 
 # blog-react-and-firebase
 
-Projeto utilizando Recat e firebase.
+Projeto utilizando React e firebase.
 
 # repositorio-app
 
