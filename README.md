@@ -5,13 +5,13 @@ Exercícios e projetos realizados durante o curso<br/>
 
 ## Índice
 
-- **[Exercícios com react](#%C3%ADndice)**
+- **[Exercícios com react](#Exercícios com react)**
 - Firebase
 - Blog React e firebase
 
 ## Exercícios com react
-Praticando os conceitos do reactjs.
-[Arquivos](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
+Praticando os conceitos do reactjs.<br/>
+Arquivos:[exercicos-react](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
 
 ![TESTE](assets-md/exercicios-min.gif)
 
