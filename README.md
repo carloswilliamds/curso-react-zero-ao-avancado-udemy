@@ -1,10 +1,10 @@
 # Curso React do Zero ao Avançado 
-https://www.udemy.com/course/curso-reactjs/
+https://www.udemy.com/course/curso-reactjs/ <br />
 Exercícios e projetos realizados durante o curso<br/>
 
 ## Exercícios com react
 Praticando os conceitos do reactjs.
-...
+...javascript
 import React, {Component} from 'react';
 
 
