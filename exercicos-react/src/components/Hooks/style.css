@@ -1,0 +1,30 @@
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.todo input{
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+.todo div{
+    width: 250px;
+}
+
+.todo li, .todo p{
+    color: #FFF;
+}
+
+.todo button{
+    margin: 5px 0;
+}
+
+.todo ul{
+    width: 140px;
+}

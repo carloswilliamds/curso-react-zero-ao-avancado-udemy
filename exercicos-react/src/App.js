@@ -1,17 +1,18 @@
 import React, {Component} from "react"
-import RoutesFilmes from "./components/Filmes/routes";
-import Filmes from "./components/Filmes";
-import Appfeed from "./Appfeed"
-import Hooks from "./components/Hooks";
-
-
+import Exercicios from "./routes"
+import {Link} from "react-router-dom"
 
 
 class App extends Component{
 
     render() {
         return (
-        <Hooks></Hooks>
+        <>           
+            <Exercicios>
+
+            </Exercicios>
+
+        </>
         );
     }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./style.css"
 
 class TodoItens extends Component{
 
@@ -87,7 +88,7 @@ class Todolist extends Component{
 
     render(){
         return(
-            <div>
+            <div className="todo">
                 <form onSubmit={this.addItem}>
                     <input type="text" placeholder="nova tarefa" name="tarefa" value={this.state.tarefa} onChange={ (e) => this.setState({ tarefa: e.target.value})}
                     ref={ (e) => this._tarefaInput = e }  />

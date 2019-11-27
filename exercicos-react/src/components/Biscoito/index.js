@@ -6,19 +6,40 @@ class Biscoito extends Component{
     constructor(props){
         super(props);
         this.state = {
-            fraseAtual: "Frase Aleatoria..."
+            fraseAtual: "Frase Aleatoria...",
+            lastN: null
         };
-        this.frases = ["Frase 1", "Frase 2", "Frase 3", "Frase 4", "Frase 5", "Frase 6"]
+        this.frases = ["Javascript !== Java", "Frase sem sentido", "Não delegue sua sorte a um biscoito", "Esse biscoito não sabe o que diz "]
 
         this.mostrarFrase = this.mostrarFrase.bind(this);
     }
 
+
     mostrarFrase(){
 
+        
         let numeroAleatorio = Math.floor(Math.random() * this.frases.length );
-        this.setState({
-            fraseAtual: this.frases[numeroAleatorio]
-        })
+        console.log(this.state.lastN, numeroAleatorio)
+
+        if(this.state.lastN === numeroAleatorio){
+
+            numeroAleatorio = Math.floor(Math.random() * this.frases.length );
+
+            if(this.state.lastN === numeroAleatorio){
+                numeroAleatorio = Math.floor(Math.random() * this.frases.length );
+            }
+
+            this.setState({
+                fraseAtual: this.frases[numeroAleatorio]
+            })
+        }else {
+            this.setState({
+                fraseAtual: this.frases[numeroAleatorio]
+            })
+        }
+
+        this.setState({lastN: numeroAleatorio})
+        console.log(this.state.lastN, numeroAleatorio)
     }
 
     render(){

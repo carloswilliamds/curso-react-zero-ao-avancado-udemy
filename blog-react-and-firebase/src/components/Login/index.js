@@ -31,7 +31,8 @@ componentDidMount(){
         try{
             await firebase.login(email, password).then( () =>{
                 this.setState({messageError: "Logando..."})
-      
+                this.props.newStatus()
+                console.log(this.props.newStatus, "login bb")
                 this.props.history.replace("/dashboard")
             }).catch((error) =>{
                 console.log(error)

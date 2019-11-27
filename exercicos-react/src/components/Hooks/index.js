@@ -1,4 +1,5 @@
 import  React, { useState, useEffect, useMemo, useCallback } from 'react'
+import "./style.css"
 
 function Hooks(){
     const [tarefas, setTarefas] = useState([]);
@@ -33,17 +34,19 @@ function Hooks(){
 
  
     return(
-        <div>
+        <div className="todo">
+
+            <p>Essa lista tem {numerosDeItens} itens.</p>
+            <button type="button" onClick={handleAdd}>Adicionar</button>
+            <button type="button" onClick={handleRemoveAll}>Deletar tudo</button>
+
+            <input type="text" value={texto} onChange={(e) => setTexto(e.target.value)} />
+
             <ul>
                 {tarefas.map(tarefa =>(
                     <li key={tarefa}>{tarefa}</li>
                 ))}
             </ul>
-            <p>Essa lista tem {numerosDeItens} itens.</p>
-            <button type="button" onClick={handleAdd}>Adicionar</button>
-            <button type="button" onClick={handleRemoveAll}>Deletar a porra toda</button>
-
-            <input type="text" value={texto} onChange={(e) => setTexto(e.target.value)} />
         </div>
     )
 }

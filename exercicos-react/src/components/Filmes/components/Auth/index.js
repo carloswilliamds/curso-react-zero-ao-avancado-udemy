@@ -1,5 +1,5 @@
 
 
 export const autenticacao = () => {
-    return false;
+    return true;
 }

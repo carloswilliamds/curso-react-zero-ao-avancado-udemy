@@ -14,15 +14,36 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      firebasaseInitialized: false
+      firebasaseInitialized: false,
+      stateLogin: false
     }
+
+      this.setStateLogin = this.setStateLogin.bind(this);
   }
 
-  componentDidMount(){
 
+
+
+    setStateLogin(){
+
+      console.log("chamou ", this.state.stateLogin)
+        if(firebase.getCurrent()){
+            this.setState({
+                stateLogin: true
+            })
+        }else{
+            this.setState({
+                stateLogin: false
+            })
+        }
+        console.log(this.state.stateLogin)
+    }
+
+
+  componentDidMount(){
     firebase.isInitialized().then(res =>{
       console.log(res, "res")
-
+      this.setStateLogin()
       this.setState({
         firebasaseInitialized: res
       })
@@ -34,16 +55,13 @@ class App extends Component{
   render(){
     return this.state.firebasaseInitialized !== false ? (
       <BrowserRouter>
-      <Header></Header>
+          <Route path="/" render={(props) => <Header {...props} stateLogin={this.state.stateLogin} newStatus={this.setStateLogin} />}></Route>
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/login" render={(props) => <Login {...props} newStatus={this.setStateLogin} />}></Route>
           <Route exact path="/register" component={Register}></Route>
           <Route exact path="/dashboard" component={Dashboard}></Route>
           <Route exact path="/dashboard/new" component={New}></Route>
-
-
-
           <Route path="*" component={Erro}></Route>
         </Switch>
       </BrowserRouter>
