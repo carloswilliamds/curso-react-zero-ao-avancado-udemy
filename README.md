@@ -13,25 +13,30 @@ Exercícios e projetos realizados durante o curso<br/>
 ## Exercícios com React
 Praticando os conceitos do reactjs.<br/>
 Arquivos: [exercicos-react](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
-
-![TESTE](assets-md/exercicios-min.gif)
-
 ```javascript
 import React, {Component} from 'react';
 ```
+![TESTE](assets-md/exercicios-min.gif)
+
 
 ## Exercícios com Firebase
 Testes com o banco de dados Firebase.<br />
 Arquivos: [firebase](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
 
 
-## Projeto Sistema de login e cadastro de postagem
+## Projeto sistema de login e cadastro de postagem
 Projeto utilizando React e Firebase.<br />
 Arquivos: [blog-react-and-firebase](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
+
+#### Cadastro e Login
+![TESTE](assets-md/blog-parte-01.gif)
+
+#### Nova postagem
+![TESTE](assets-md/blog-parte-02.gif)
 
 
 ## Projeto busca de repositiorios no Github
 Projeto utilizando React Hooks, React Router, Styled Components.<br />
 Arquivos: [repositiorio-app](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/tree/master/exercicos-react)
 
-![TESTE](https://github.com/carloswilliamds/curso-react-zero-ao-avancado-udemy/blob/master/respositorios-gif.gif)
+![TESTE](assets-md/respositorios-gif.gif)
